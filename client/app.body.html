@@ -1,9 +1,9 @@
 <body>
 
   <div class="fortuneCookies">
-      {{ #each fortuneCookies }}
-          {{ >fortuneCookie }}
-      {{ /each }}
+      {{#with getRandomFortuneCookie}}
+        {{> fortuneCookie}}
+      {{/with}}
   </div>
 
 </body>
