@@ -1,1 +1,1 @@
-FortuneCookies = new Mongo.Collection('fortune-cookies');
+FortuneCookies = new Mongo.Collection('fortuneCookies');
