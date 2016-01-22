@@ -1,9 +1,10 @@
 <body>
 
-  <div class="fortuneCookies">
-      {{#with getRandomFortuneCookie}}
+    <div class="fortuneCookies">
+        <button id="fortuneCookieButton">Eat the cookie</button>
+        {{#with getRandomFortuneCookie}}
         {{> fortuneCookie}}
-      {{/with}}
-  </div>
+        {{/with}}
+    </div>
 
 </body>
