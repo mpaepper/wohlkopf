@@ -13,6 +13,7 @@ Template.body.events({
             var allFortuneCookies = FortuneCookies.find().fetch();
             var cookie = Random.choice(allFortuneCookies);
             Session.set('fortuneCookie', cookie);
+            jQuery('#fortuneCookieButton').hide();
         }
     }
 });

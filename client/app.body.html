@@ -1,10 +1,80 @@
 <body>
-
-    <div class="fortuneCookies">
-        <button id="fortuneCookieButton">Eat the cookie</button>
-        {{#with getRandomFortuneCookie}}
-        {{> fortuneCookie}}
-        {{/with}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>
+                        Willkommen bei Wohlkopf! <small>Einfach gut fühlen</small>
+                    </h1>
+                </div>
+                <div class="jumbotron well">
+                    <h2>
+                        Meet Wohli!
+                    </h2>
+                    <img alt="Wohlkopf Avatar" src="/wohlkopf-avatar.jpg" />
+                    <p>
+                        Do you know the problem of thinking too much? We are here to help you cope with your life and handle stress better. Learn more and take our tour, <span>but first, it is time to eat your fortune cookie:</span>
+                    </p>
+                    <div class="fortuneCookies">
+                        <p>
+                            <a id="fortuneCookieButton" class="btn btn-primary btn-large" href="#">Eat the fortune cookie</a>
+                        </p>
+                        {{#with getRandomFortuneCookie}}
+                        {{> fortuneCookie}}
+                        {{/with}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg">
+                            <div class="caption">
+                                <h3>
+                                    Meditation
+                                </h3>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary" href="#">Einführung in Meditation</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg">
+                            <div class="caption">
+                                <h3>
+                                    Mindfulness
+                                </h3>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary" href="#">Was ist Mindfulness?</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg">
+                            <div class="caption">
+                                <h3>
+                                    Stress
+                                </h3>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary" href="#">Stress reduzieren!</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </body>
