@@ -9,20 +9,26 @@
                     </h1>
                 </div>
                 <div class="jumbotron well">
-                    <h2>
-                        Meet Wohli!
-                    </h2>
-                    <img alt="Wohlkopf Avatar" src="/wohlkopf-avatar.jpg" />
-                    <p>
-                        Do you know the problem of thinking too much? We are here to help you cope with your life and handle stress better. Learn more and take our tour, <span>but first, it is time to eat your fortune cookie:</span>
-                    </p>
-                    <div class="fortuneCookies">
-                        <p>
-                            <a id="fortuneCookieButton" class="btn btn-default btn-large color2" href="#">Eat the fortune cookie</a>
-                        </p>
-                        {{#with getRandomFortuneCookie}}
-                        {{> fortuneCookie}}
-                        {{/with}}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2>
+                                Meet Wohli!
+                            </h2>
+                            <img alt="Wohlkopf Avatar" src="/wohlkopf-avatar.jpg" />
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                Do you know the problem of thinking too much? We are here to help you cope with your life and handle stress better. Learn more and take our tour, <span>but first, it is time to eat your fortune cookie:</span>
+                            </p>
+                            <div class="fortuneCookies">
+                                <p>
+                                    <a id="fortuneCookieButton" class="btn btn-default btn-large color2" href="#">Eat the fortune cookie</a>
+                                </p>
+                                {{#with getRandomFortuneCookie}}
+                                {{> fortuneCookie}}
+                                {{/with}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
