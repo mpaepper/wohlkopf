@@ -1,13 +1,11 @@
 <template name="layout">
-    {{> head}}
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    {{> navigation}}
-                    {{> yield}}
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{> navigation}}
+                {{> yield}}
             </div>
         </div>
-    </body>
+        {{> yield "footer"}}
+    </div>
 </template>
