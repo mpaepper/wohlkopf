@@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 less
 random
 nemo64:bootstrap
+iron:router
