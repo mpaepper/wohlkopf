@@ -1,4 +1,4 @@
-Template.body.helpers({
+Template.home.helpers({
     fortuneCookies: function () {
         return FortuneCookies.find();
     },
@@ -7,7 +7,7 @@ Template.body.helpers({
     }
 });
 
-Template.body.events({
+Template.home.events({
     'click #fortuneCookieButton': function () {
         if (!Session.get('fortuneCookie')) {
             var allFortuneCookies = FortuneCookies.find().fetch();
