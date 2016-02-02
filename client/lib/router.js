@@ -6,3 +6,8 @@ Router.route('/', function () {
 }, {
     name: 'home'
 });
+Router.route('insertCookie', function () {
+    this.render('insertCookieForm');
+}, {
+    name: 'insertCookie'
+});
