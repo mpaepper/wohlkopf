@@ -1,11 +1,5 @@
-<template name="layout">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                {{> navigation}}
-                {{> yield}}
-            </div>
-        </div>
-        {{> yield "footer"}}
-    </div>
+<template name="layout">  
+    {{> navigation}}
+    {{> yield}}
+    {{> yield "footer"}}
 </template>
