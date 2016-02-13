@@ -24,3 +24,5 @@ nemo64:bootstrap
 iron:router
 aldeed:collection2
 aldeed:autoform
+fortawesome:fontawesome
+johannesma:meteor-flexslider
