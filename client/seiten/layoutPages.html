@@ -1,0 +1,13 @@
+<template name="layoutPages">  
+    {{> navigation}}
+    <div class="wrapper">
+        <div class="blog-entry-wrapper"> 
+            <div class="blog-entry">                 
+                <article class="post">
+                    {{> yield}}
+                </article>                                  
+            </div>
+        </div>
+    </div>
+    {{> footer}}
+</template>

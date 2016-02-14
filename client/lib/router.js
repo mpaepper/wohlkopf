@@ -17,11 +17,13 @@ Router.route('insertCookie', function () {
     name: 'insertCookie'
 });
 Router.route('/seiten/:topic', function () {
+  this.layout('layoutPages');
   this.render(this.params.topic);
 }, {
     name: 'pages'
 });
 Router.route('/seiten/:topic/:subtopic', function () {
+    this.layout('layoutPages');
     var topic = this.params.topic;
     var subtopic = this.params.subtopic;
     var template = topic.concat("-").concat(subtopic);
