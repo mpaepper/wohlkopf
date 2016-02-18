@@ -1,0 +1,12 @@
+<template name="fortuneCookies">
+    <div class="fortuneCookies topspace">
+    {{#with getRandomFortuneCookie}}
+            {{> fortuneCookie getRandomFortuneCookie}}
+        {{else}}
+            <h4>Genieße Deinen Glückskeks:</h4>
+            <p>
+                <a id="fortuneCookieButton" class="btn btn-default btn-lg btn-cta btn-cta-secondary" href="#" role="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Den Glückskeks futtern!</a>
+            </p>
+    {{/with}}
+    </div>
+</template>

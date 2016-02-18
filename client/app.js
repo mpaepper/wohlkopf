@@ -1,4 +1,4 @@
-Template.home.helpers({
+Template.fortuneCookies.helpers({
     fortuneCookies: function () {
         return FortuneCookies.find();
     },
@@ -7,13 +7,11 @@ Template.home.helpers({
     }
 });
 
-Template.home.events({
+Template.fortuneCookies.events({
     'click #fortuneCookieButton': function () {
-        if (!Session.get('fortuneCookie')) {
-            var allFortuneCookies = FortuneCookies.find().fetch();
-            var cookie = Random.choice(allFortuneCookies);
-            Session.set('fortuneCookie', cookie);
-            jQuery('#fortuneCookieButton').hide();
-        }
+        var allFortuneCookies = FortuneCookies.find().fetch();
+        var cookie = Random.choice(allFortuneCookies);
+        Session.set('fortuneCookie', cookie);
+        Meteor.setTimeout(function(){Session.set('fortuneCookie', '')}, 7000);
     }
 });

@@ -44,15 +44,7 @@
                     <figure class="figure col-md-5 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
                         <img class="img-responsive" src="/wohlkopf-avatar-farbig.png" alt="" />
                         <figcaption class="figure-caption">Moin, ich bin Wohli und begleite Dich hier.</figcaption>
-                        <div class="fortuneCookies topspace">
-                            <h4>Genieße Deinen Glückskeks:</h4>
-                            <p>
-                                <a id="fortuneCookieButton" class="btn btn-default btn-lg btn-cta btn-cta-secondary" href="#" role="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Den Glückskeks futtern!</a>
-                            </p>
-                            {{#with getRandomFortuneCookie}}
-                            {{> fortuneCookie}}
-                            {{/with}}
-                        </div>
+                        {{> fortuneCookies}}
                     </figure>
                 </div>
 

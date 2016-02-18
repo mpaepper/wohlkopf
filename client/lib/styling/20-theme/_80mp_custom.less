@@ -2,3 +2,21 @@
 
 // Menu
 #header .logo {font-family: @headings-font-family}
+
+.fortuneCookie {
+    animation:alert-success 3s 1;
+    -webkit-animation:alert-success 3s 1;
+    animation-fill-mode: forwards;
+    animation-delay:3s;
+    -webkit-animation-delay:3s; /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes alert-success{
+    0%   {opacity: 1;}
+    30%  {opacity: 0.9;}
+    40%  {opacity: 0.8;}
+    60%  {opacity: 0.5;}
+    90% {opacity: 0.1;-webkit-transform: translateY(0px);}
+    100% {opacity: 0;-webkit-transform: translateY(-30px);}
+}
