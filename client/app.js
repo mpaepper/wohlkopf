@@ -12,3 +12,5 @@ Template.fortuneCookies.events({
         Meteor.setTimeout(function(){Session.set('fortuneCookie', '')}, 7000);
     }
 });
+
+accountsUIBootstrap3.setLanguage('de');
