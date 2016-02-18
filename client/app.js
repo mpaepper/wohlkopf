@@ -1,7 +1,4 @@
 Template.fortuneCookies.helpers({
-    fortuneCookies: function () {
-        return FortuneCookies.find();
-    },
     getRandomFortuneCookie: function () {
         return Session.get('fortuneCookie');
     }
