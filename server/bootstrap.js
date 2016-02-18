@@ -4,7 +4,7 @@ Meteor.startup(function () {
 
         var sampleFortuneCookies = [
             {
-                wisdom: 'All unser Wissen hat seinen Ursprung in unser Wahrnehmung.',
+                wisdom: 'All unser Wissen hat seinen Ursprung in unserer Wahrnehmung.',
                 author: 'Leonardo Da Vinci'
             },
             {
