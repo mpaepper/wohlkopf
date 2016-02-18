@@ -4,23 +4,23 @@ Meteor.startup(function () {
 
         var sampleFortuneCookies = [
             {
-                wisdom: 'All our knowledge has its origin in our perceptions.',
+                wisdom: 'All unser Wissen hat seinen Ursprung in unser Wahrnehmung.',
                 author: 'Leonardo Da Vinci'
             },
             {
-                wisdom: 'For the best return on your money, pour your purse into your head.',
+                wisdom: 'Um am meisten aus Deinem Geld zu machen, nutze es um Neues zu lernen.',
                 author: 'Benjamin Franklin'
             },
             {
-                wisdom: 'To get answers of life, ask questions.',
+                wisdom: 'Um die Antworten des Lebens zu finden, stelle Fragen.',
                 author: 'Sukant Ratnakar'
             },
             {
-                wisdom: 'It is not as much about who you used to be, as it is about who you choose to be.',
+                wisdom: 'Es geht nicht so sehr darum wer Du mal warst, sondern darum wofür Du Dich entscheidest zu sein.',
                 author: 'Sanhita Baruah'
             },
             {
-                wisdom: 'Let him who would move the world first move himself.',
+                wisdom: 'Lasse ihn der die Welt verändern will zunächst sich selbst verändern.',
                 author: 'Socrates'
             }
         ];
