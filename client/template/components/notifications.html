@@ -1,0 +1,16 @@
+<template name="notifications">
+    {{#if currentUser}}
+        <li class="nav-item dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Wohliges <span class="badge">{{notificationsCount}}</span></a>
+            <ul class="dropdown-menu">
+                {{#each notifications}}
+                    {{> notification}}
+                {{/each}}
+            </ul>                            
+        </li>   
+    {{/if}}
+</template>
+
+<template name="notification">
+    <li><a href="#">{{text}}</a></li>
+</template>
