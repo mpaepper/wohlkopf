@@ -26,6 +26,6 @@ Notifications.attachSchema(Schemas.Notifications);
 
 if (Meteor.isServer) {
     Meteor.publish("notifications", function (date) {
-        return Notifications.find({'date': {$gte: date}});
+        return Notifications.find({'date': {$gte: date}}, {sort: {date: -1}});
     });
 }
