@@ -15,3 +15,13 @@ Schemas.FortuneCookies = new SimpleSchema({
 });
 
 FortuneCookies.attachSchema(Schemas.FortuneCookies);
+
+if (Meteor.isServer) {
+  Meteor.publish("fortuneCookies", function () {
+    return FortuneCookies.find();
+  });
+}
+ 
+if (Meteor.isClient) {
+  Meteor.subscribe("fortuneCookies");
+}
