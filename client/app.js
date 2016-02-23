@@ -17,7 +17,7 @@ Template.fortuneCookies.events({
 
 Template.notifications.helpers({
     notifications: function () {
-        return Notifications.find();
+        return Notifications.find({}, {sort: {date: -1}});
     },
     notificationsCount: function () {
         var count = Notifications.find().count();

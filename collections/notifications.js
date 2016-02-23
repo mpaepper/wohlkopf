@@ -18,7 +18,8 @@ Schemas.Notifications = new SimpleSchema({
 //    },
     date: {
         type: Date,
-        label: "Date"
+        label: "Date",
+        defaultValue: new Date()
     }
 });
 
