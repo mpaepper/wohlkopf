@@ -27,6 +27,9 @@ Notifications.attachSchema(Schemas.Notifications);
 
 if (Meteor.isServer) {
     Meteor.publish("notifications", function (date) {
-        return Notifications.find({'date': {$gte: date}}, {sort: {date: -1}});
+        // Filter out already read notifications
+        var arrayRead = ReadNotifications.find({'date': {$gte: date}, 'userId': this.userId}, {fields: {'notificationId': 1}}).fetch();
+        var readNotifications = arrayRead.map(function (s){ return s.notificationId; });
+        return Notifications.find({'date': {$gte: date}, '_id': {$nin: readNotifications}}, {sort: {date: -1}});
     });
 }

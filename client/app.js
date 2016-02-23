@@ -17,10 +17,16 @@ Template.fortuneCookies.events({
 
 Template.notifications.helpers({
     notifications: function () {
-        return Notifications.find({}, {sort: {date: -1}});
+        var arrayRead = ReadNotifications.find().fetch();
+        var readNotifications = arrayRead.map(function (s){ return s.notificationId; });
+        return Notifications.find({'_id': {$nin: readNotifications}}, {sort: {date: -1}});
     },
     notificationsCount: function () {
-        var count = Notifications.find().count();
+        // TODO Avoid code duplication here and on server
+        var arrayRead = ReadNotifications.find().fetch();
+        var readNotifications = arrayRead.map(function (s){ return s.notificationId; });
+        var coll =  Notifications.find({'_id': {$nin: readNotifications}}, {sort: {date: -1}});
+        var count = coll.count();
         if (count > 0) {
             return count;
         } else {
@@ -40,6 +46,12 @@ Template.notifications.onCreated(function () {
     });
 });
 
+Template.notification.events({
+    'click .notification': function () {
+        // TODO Make server function to make this secure
+        ReadNotifications.insert({notificationId: this._id, userId: Meteor.userId()});
+    }
+});
 
 accountsUIBootstrap3.setLanguage('de');
 
