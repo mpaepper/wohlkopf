@@ -31,10 +31,7 @@ Template.notifications.helpers({
 });
 
 Template.notifications.onCreated(function () {
-    var self = this;
-    self.autorun(function () {
-        self.subscribe('notifications');
-    });
+    this.subscribe('notifications');
 });
 
 Template.notification.events({
