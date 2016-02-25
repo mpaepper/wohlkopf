@@ -12,10 +12,10 @@ Schemas.Notifications = new SimpleSchema({
         type: String,
         label: "Author"
     },
-//    url: {
-//        type: String,
-//        label: "Url"
-//    },
+    url: {
+        type: String,
+        label: "Url"
+    },
     date: {
         type: Date,
         label: "Date",
@@ -25,11 +25,23 @@ Schemas.Notifications = new SimpleSchema({
 
 Notifications.attachSchema(Schemas.Notifications);
 
-if (Meteor.isServer) {
-    Meteor.publish("notifications", function (date) {
-        // Filter out already read notifications
-        var arrayRead = ReadNotifications.find({'date': {$gte: date}, 'userId': this.userId}, {fields: {'notificationId': 1}}).fetch();
-        var readNotifications = arrayRead.map(function (s){ return s.notificationId; });
-        return Notifications.find({'date': {$gte: date}, '_id': {$nin: readNotifications}}, {sort: {date: -1}});
-    });
-}
+Meteor.startup(function () {
+    getUnreadNotifications = function () {
+        var today = new Date();
+        var date = new Date(today);
+        date.setDate(today.getDate() - 7);
+        var userId = this.userId;
+        if (Meteor.isClient) {
+            userId = Meteor.userId();
+        }
+        var arrayRead = ReadNotifications.find({'date': {$gte: date}, 'userId': userId}, {fields: {'notificationId': 1}}).fetch();
+        var readNotifications = arrayRead.map(function (s) {
+            return s.notificationId;
+        });
+        return Notifications.find({'date': {$gte: date}, '_id': {$nin: readNotifications}}, {sort: {date: -1}, limit: 10});
+    };
+    
+    if (Meteor.isServer) {
+        Meteor.publish("notifications", getUnreadNotifications);
+    }
+});

@@ -17,15 +17,10 @@ Template.fortuneCookies.events({
 
 Template.notifications.helpers({
     notifications: function () {
-        var arrayRead = ReadNotifications.find().fetch();
-        var readNotifications = arrayRead.map(function (s){ return s.notificationId; });
-        return Notifications.find({'_id': {$nin: readNotifications}}, {sort: {date: -1}});
+        return getUnreadNotifications();
     },
     notificationsCount: function () {
-        // TODO Avoid code duplication here and on server
-        var arrayRead = ReadNotifications.find().fetch();
-        var readNotifications = arrayRead.map(function (s){ return s.notificationId; });
-        var coll =  Notifications.find({'_id': {$nin: readNotifications}}, {sort: {date: -1}});
+        var coll = getUnreadNotifications();
         var count = coll.count();
         if (count > 0) {
             return count;
@@ -37,12 +32,8 @@ Template.notifications.helpers({
 
 Template.notifications.onCreated(function () {
     var self = this;
-    $today = new Date();
-    $yesterday = new Date($today);
-    $yesterday.setDate($today.getDate() - 1);
-    // TODO Make sure to not show notifications more than once
     self.autorun(function () {
-        self.subscribe('notifications', $yesterday);
+        self.subscribe('notifications');
     });
 });
 
