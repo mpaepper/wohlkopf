@@ -36,8 +36,7 @@ Template.notifications.onCreated(function () {
 
 Template.notification.events({
     'click .notification': function () {
-        // TODO Make server function to make this secure
-        ReadNotifications.insert({notificationId: this._id, userId: Meteor.userId()});
+        Meteor.call('markNotificationAsRead', this._id);
     }
 });
 

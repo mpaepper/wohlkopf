@@ -27,4 +27,5 @@ johannesma:meteor-flexslider
 ian:accounts-ui-bootstrap-3
 accounts-password
 email
-insecure
+check
+audit-argument-checks
